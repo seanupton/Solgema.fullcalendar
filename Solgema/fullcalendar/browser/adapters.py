@@ -365,7 +365,7 @@ class ColorIndexGetter(object):
                  'class':''}
         if not criteriaItems:
             return final.copy()
-        colorsDict = self.calendar.queryColors
+        colorsDict = self.calendar.queryColors or {}
 
         props = getToolByName(self.context, 'portal_properties')
         charset = props and props.site_properties.default_charset or 'utf-8'
